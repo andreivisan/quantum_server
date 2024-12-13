@@ -16,12 +16,12 @@ MOST IMPORTANT: Respond in JSON format with 'title', 'content', 'confidence' (0-
 REPLY WITH EXACTLY ONE JSON OBJECT THAT REPRESENTS EXACTLY ONE STEP IN YOUR REASONING.
 
 Example of a valid JSON response:
-{
+{{
     "title": "Initial Problem Analysis",
     "content": "To begin solving this problem, I'll break it down into its core components...",
     "confidence": 90,
     "next_action": "continue"
-}
+}}
 
 REMEMBER: Your answer will be parsed as JSON and fed to you in the next step by the main app.
 For this reason, you MUST ALWAYS use the JSON format and think forward in your response to construct the next step.
