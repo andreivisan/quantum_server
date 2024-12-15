@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
+from fastapi import FastAPI
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
 from langchain_ollama import ChatOllama
 from langchain.schema import SystemMessage, HumanMessage
+import asyncio
 
-def chat_with_qwq():
+app = FastAPI()
+
+class ChatRequest(BaseModel):
+    message: str
+
+def get_chat_model():
     model = ChatOllama(
         model="qwq",
         temperature=0.7
@@ -21,15 +30,31 @@ def chat_with_qwq():
     
     return model, system_prompt
 
-if __name__ == "__main__":
-    model, system_prompt = chat_with_qwq()
-    
+async def stream_response(message: str):
+    model, system_prompt = get_chat_model()
     messages = [
         SystemMessage(content=system_prompt),
-        HumanMessage(content="Write a Python function that calculates the Fibonacci sequence")
+        HumanMessage(content=message)
     ]
     
-    # Stream the response
     for chunk in model.stream(messages):
-        print(chunk.content, end="", flush=True)
+        if chunk.content.strip():
+            yield f"{chunk.content}"
+            await asyncio.sleep(0.01)
+
+@app.post("/chat/stream")
+async def chat_stream(request: ChatRequest):
+    return StreamingResponse(
+        stream_response(request.message),
+        media_type='text/event-stream',
+        headers={
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+            'Transfer-Encoding': 'chunked'
+        }
+    )
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
   
