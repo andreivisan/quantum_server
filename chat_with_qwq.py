@@ -38,9 +38,10 @@ async def stream_response(message: str):
     ]
     
     for chunk in model.stream(messages):
-        if chunk.content.strip():
-            yield f"{chunk.content}"
-            await asyncio.sleep(0.01)
+        # Handle smart quotes and other special characters
+        content = chunk.content.replace('"', '"').replace('"', '"').replace("'", "'")
+        yield content
+        await asyncio.sleep(0.01)
 
 @app.post("/chat/stream")
 async def chat_stream(request: ChatRequest):
@@ -50,7 +51,8 @@ async def chat_stream(request: ChatRequest):
         headers={
             'Cache-Control': 'no-cache',
             'Connection': 'keep-alive',
-            'Transfer-Encoding': 'chunked'
+            'Transfer-Encoding': 'chunked',
+            'Content-Type': 'text/event-stream; charset=utf-8'
         }
     )
 
