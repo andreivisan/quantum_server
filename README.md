@@ -7,6 +7,7 @@
  | |__| | |_| | (_| | | | | |_| |_| | | | | | | |____| |____ _| |_   ____) |  __/ |   \ V /  __/ |   
   \___\_\\__,_|\__,_|_| |_|\__|\__,_|_| |_| |_|\_____|______|_____| |_____/ \___|_|    \_/ \___|_|   
 ```                                                                                                     
+
 [![Tests](https://github.com/andreivisan/quantum_server/actions/workflows/test.yml/badge.svg)](https://github.com/andreivisan/quantum_server/actions/workflows/test.yml)                                                                                                     
 
 </div>
