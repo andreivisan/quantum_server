@@ -23,7 +23,7 @@ langchain-ollama==0.2.1
 langchain-text-splitters==0.3.4
 langsmith==0.2.3
 multidict==6.1.0
-numpy==2.2.0
+numpy>=1.22.4,<2.0.0
 ollama==0.4.4
 orjson==3.10.12
 packaging==24.2
