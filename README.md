@@ -11,5 +11,7 @@
 
 [![Tests](https://github.com/andreivisan/quantum_server/actions/workflows/test.yml/badge.svg)](https://github.com/andreivisan/quantum_server/actions/workflows/test.yml)                                                                                                     
 
+<a href="https://www.buymeacoffee.com/programminglife" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 </div>
 
