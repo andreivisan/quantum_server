@@ -1,7 +1,7 @@
 <div align="center">
 
 ```
-   ____                   _                     _____                              
+    ____                   _                     _____                              
   / __ \                 | |                   / ____|                            
  | |  | |_   _  __ _ _ __| |_ _   _ _ __ ___  | (___   ___ _ ____   _____ _ __   
  | |  | | | | |/ _' | '__| __| | | | '_ ' _ \  \___ \ / _ \ '__\ \ / / _ \ '__|  
@@ -17,7 +17,7 @@
 
 ## Project Vision & Goals
 
-Quantum Server is the backend component that powers the Quantum CLI tool. It provides a FastAPI-based server that interfaces with Chain of Thought AI models through Ollama and LangChain. The server handles AI interactions and provides a streaming API endpoint for real-time AI responses.
+Quantum Server is the backend component that powers the Quantum CLI tool. It provides a FastAPI-based server that interfaces with Chain of Thought AI model through Ollama and LangChain. The server handles AI interactions and provides a streaming API endpoint for real-time AI responses.
 
 ## Key Features
 
