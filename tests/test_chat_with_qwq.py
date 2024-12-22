@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from chat_with_qwq import app, get_chat_model, ChatRequest, stream_response
+from chat_with_qwq import app, get_chat_model, ChatRequest
 from unittest.mock import patch, MagicMock
 from langchain.schema import AIMessage
 
@@ -49,11 +49,3 @@ def test_get_chat_model():
     assert isinstance(system_prompt, str)
     assert "THINKING:" in system_prompt
     assert "ANSWER:" in system_prompt
-
-
-@pytest.mark.asyncio
-async def test_stream_response():
-    async for chunk in stream_response("test message"):
-        assert isinstance(chunk, str)
-        # Break after first chunk as we just want to test the generator works
-        break
