@@ -27,7 +27,7 @@ langsmith==0.2.3
 mccabe==0.7.0
 multidict==6.1.0
 mypy-extensions==1.0.0
-numpy==2.2.0
+numpy>=1.22.4,<2.0.0
 ollama==0.4.4
 orjson==3.10.12
 packaging==24.2
