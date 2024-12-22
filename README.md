@@ -29,7 +29,7 @@ Quantum Server is the backend component that powers the Quantum CLI tool. It pro
 
 ## Prerequisites
 
-- [Ollama](https://ollama.ai) (The CLI tool will guide you through the installation)
+- [Ollama](https://ollama.ai) (The [CLI tool](https://github.com/andreivisan/quantum_cli) will guide you through the installation)
 - QwQ AI model ```ollama pull qwq``` or ```ollama run qwq```
 - Python 3.10 or later
 - Recommended hardware: 32 GB RAM, and if using MacBook Pro, M1 or above
