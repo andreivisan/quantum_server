@@ -17,7 +17,7 @@
 
 ## Project Vision & Goals
 
-Quantum Server is the backend component that powers the Quantum CLI tool. It provides a FastAPI-based server that interfaces with Chain of Thought AI model through Ollama and LangChain. The server handles AI interactions and provides a streaming API endpoint for real-time AI responses.
+Quantum Server is the backend component that powers the [Quantum CLI tool](https://github.com/andreivisan/quantum_cli). It provides a FastAPI-based server that interfaces with Chain of Thought AI model through Ollama and LangChain. The server handles AI interactions and provides a streaming API endpoint for real-time AI responses.
 
 ## Key Features
 
